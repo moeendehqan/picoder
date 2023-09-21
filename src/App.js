@@ -5,7 +5,7 @@ function App() {
   const [image,setImage] = useState(null)
   const [Char,setChar] = useState(['@','#','!','$','%','^','&','*','-','_','+','=','~','<','>','O','0','X',';',':','?','"','I','A','V','T','W','M'])
   const [CharSelected, setCharSelected] = useState([])
-  const [Size, setSize] = useState({w})
+  const [Size, setSize] = useState({w:'',h:''})
 
 
   const handleCharSelected = (character) => {
@@ -17,6 +17,9 @@ function App() {
       const updatedList = [...CharSelected, character];
       setCharSelected(updatedList);
     }
+  }
+  const Apply = () =>{
+    
   }
   
 
@@ -39,9 +42,10 @@ function App() {
       </div>
 
       <div className='siz'>
-        <input  />
-
+        <input onChange={(e)=>setSize({...Size,w:e.target.value})} value={Size.w}/>
+        <input onChange={(e)=>setSize({...Size,h:e.target.value})} value={Size.h}/>
       </div>
+      <button >ثبت</button>
     </div>
   );
 }
